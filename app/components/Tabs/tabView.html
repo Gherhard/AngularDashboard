@@ -1,0 +1,28 @@
+<div ng-controller="TabController as panel">
+    <ul class="nav nav-tabs">
+        <li ng-class="{active:panel.isSelected(1) }">
+            <a href="#{{currentTab}}" ng-click="panel.selectTab(1)">Selezione da grafico</a>
+        </li>
+        <li ng-class="{active:panel.isSelected(2) }">
+            <a href="#{{currentTab}}" ng-click="panel.selectTab(2)">Selezione manuale</a>
+        </li>
+    </ul>
+    <div ng-show="panel.isSelected(1)">
+        <div class="tab-content">
+            <div id="{{currentTab}}" class="tab-content">
+                <div class="tab-pane active" role="tabpanel">
+                    <autotabdir></autotabdir>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="panel.isSelected(2)">
+        <div class="tab-content">
+            <div id="{{currentTab}}" class="tab-content">
+                <div class="tab-pane active" role="tabpanel">
+                    <manualtabdir></manualtabdir>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

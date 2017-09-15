@@ -1,0 +1,253 @@
+body {
+    padding: 1em;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.stat text,
+.axis text {
+    font: 9px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #ddd;
+    shape-rendering: crispEdges;
+}
+
+.focus-path,
+.context-path {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+    clip-path: url(#clip);
+}
+
+.focus-line {
+    stroke-dasharray: 3, 3;
+    stroke-width: 2;
+}
+
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+rect.pane {
+    cursor: move;
+    fill: none;
+    pointer-events: all;
+}
+
+path {
+    stroke: lightgray;
+    stroke-width: 2;
+    fill: none;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+}
+
+.page-sidebar,
+.page-content {
+    padding: 1em;
+}
+
+.nav.nav-tabs>li:not(.active) {
+    cursor: pointer;
+}
+
+.tab-pane {
+    padding: 1em;
+}
+
+select[id^=ui-] {
+    font-size: 16px;
+}
+
+.ui-filters {
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ui-filter {
+    flex-basis: 300px;
+    margin-right: 1em;
+}
+
+.ui-filter>select {
+    width: 100%;
+}
+
+.ui-filter [type=range] {
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle;
+}
+
+.ui-filter [type=range]+.output {
+    display: inline-block;
+    font-size: .8em;
+}
+
+.tabsdemoDynamicHeight md-content {
+    background-color: transparent !important;
+}
+
+.tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1;
+}
+
+.tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+    background: white;
+}
+
+.tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0;
+}
+
+.rzslider {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 4px;
+    margin: 35px 0 15px 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.custom-slider.rzslider .rz-bar {
+    background: #ffe4d1;
+    height: 2px;
+}
+
+.custom-slider.rzslider .rz-selection {
+    background: orange;
+}
+
+.custom-slider.rzslider .rz-pointer {
+    width: 8px;
+    height: 16px;
+    top: auto;
+    /* to remove the default positioning */
+    bottom: 0;
+    background-color: #333;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.custom-slider.rzslider .rz-pointer:after {
+    display: none;
+}
+
+.custom-slider.rzslider .rz-bubble {
+    bottom: 14px;
+}
+
+.custom-slider.rzslider .rz-limit {
+    font-weight: bold;
+    color: orange;
+}
+
+.custom-slider.rzslider .rz-tick {
+    width: 1px;
+    height: 10px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #ffe4d1;
+    top: -1px;
+}
+
+.custom-slider.rzslider .rz-tick.rz-selected {
+    background: orange;
+}
+
+#mySelect {
+    width: 200;
+    font-size: 14px;
+}
+
+#ui-aggregation,
+#ui-perc,
+#ui-quota,
+#ui-componente,
+#ui-stampo,
+#ui-controlli,
+#ui-scatter,
+#ui-temporal {
+    position: relative;
+}
+
+#ui-scatter {
+    min-height: 400px;
+}
+
+#ui-temporal {
+    min-height: 200px;
+}
+
+#ui-aggregation.loading,
+#ui-perc.loading,
+#ui-quota.loading,
+#ui-componente.loading,
+#ui-stampo.loading,
+#ui-controlli.loading,
+#ui-scatter.loading,
+#ui-temporal.loading {}
+
+#ui-aggregation.loading:after,
+#ui-perc.loading:after,
+#ui-quota.loading:after,
+#ui-componente.loading:after,
+#ui-stampo.loading:after,
+#ui-controlli.loading:after,
+#ui-scatter.loading:after,
+#ui-temporal.loading:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e5eff1 url("../img/giphy.gif") center no-repeat;
+    background-size: contain;
+    opacity: 0.85;
+}
+
+#ui-scatter.loading:after,
+#ui-temporal.loading:after {
+    background-size: 200px;
+}

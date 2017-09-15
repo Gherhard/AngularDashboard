@@ -1,0 +1,13 @@
+<div ng-controller="sidebarCtrl as sidebar">
+    <div class="form-item-wrapper">
+        <label>Seleziona aggregazione</label>
+        <select name="mySelectAgg" ng-options="option.name for option in sidebar.data1.availableOptions" ng-model="selectedAgg" ng-change="sidebar.changedValueAgg(selectedAgg)">
+            </select>
+    </div>
+
+    <div class="form-item-wrapper">
+        <label>Seleziona la percentuale da visualizzare</label>
+        <select name="mySelectPerc" ng-options="option.name for option in sidebar.data2.availableOptions" ng-model="selectedPerc" ng-change="sidebar.changedValuePerc(selectedPerc)">
+        </select>
+    </div>
+</div>

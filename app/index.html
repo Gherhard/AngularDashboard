@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<![endif]-->
+
+<head>
+    <title>Industria 4.0</title>
+    <meta charset="utf-8">
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/chartjs-plugin-zoom/chartjs-plugin-zoom.min.js"></script>
+    <script src="app.js"></script>
+
+
+    <link rel="stylesheet" href="css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="css/temp.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angularjs-slider/dist/rzslider.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+    <script src="bower_components/angular-socket-io/socket.min.js"></script>
+    <script src="bower_components/angularjs-slider/dist/rzslider.min.js"></script>
+
+    <script src="shared/sidebar/sidebarCtrl.js"></script>
+    <script src="shared/sidebar/sidebarDirective.js"></script>
+    <script src="shared/sidebar/sidebarService.js"></script>
+
+    <script src="components/Tabs/tabCtrl.js"></script>
+    <script src="components/Tabs/tabDirective.js"></script>
+    <script src="components/Tabs/tabService.js"></script>
+
+    <script src="components/Tabs/automaticTab/autoTabController.js"></script>
+    <script src="components/Tabs/automaticTab/autoTabDirective.js"></script>
+    <script src="components/Tabs/automaticTab/autoTabService.js"></script>
+
+    <script src="components/Tabs/manualTab/manualTabGraphController.js"></script>
+    <script src="components/Tabs/manualTab/manualTabController.js"></script>
+    <script src="components/Tabs/manualTab/manualTabDirective.js"></script>
+    <script src="components/Tabs/manualTab/manualTabGraphService.js"></script>
+    <script src="components/Tabs/manualTab/manualDataService.js"></script>
+    <script src="components/Tabs/manualTab/manualService.js"></script>
+
+    <script src="components/socket/socketCtrl.js"></script>
+    <script src="components/socket/socketService.js"></script>
+    <script src="components/socket/dataService.js"></script>
+
+    <script src="assets/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="socketCtrl">
+        <!--[if lt IE 7]>
+		      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+        <div class="page-header">
+            <h1>Esplorazione Dati</h1>
+        </div>
+        <div class="page-container">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar">
+                    <form class="form-chart">
+                        <sidebardir></sidebardir>
+                    </form>
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <tabdir></tabdir>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

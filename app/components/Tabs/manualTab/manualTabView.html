@@ -1,0 +1,29 @@
+<div ng-controller="manualTabController as manctrl">
+    <div class="tab-pane" id="manual">
+        <div id="ui-filters" class="ui-filters">
+            <div class="ui-filter" ng-if="manctrl.display1()">
+                <label id="ui-quota--label">Seleziona Quota</label>
+                <select ng-model="manctrl.quote.selectedOption" ng-options="option for option in manctrl.quote.availableOptions" ng-change="manctrl.changedValueQuota(manctrl.quote.selectedOption)">
+                        </select>
+            </div>
+            <div class="ui-filter" ng-if="manctrl.display2()">
+                <label id="ui-componente--label">Seleziona Componente</label>
+                <select ng-model="manctrl.componenti.selectedOption" ng-options="option for option in manctrl.componenti.availableOptions" ng-change="manctrl.changedValueComp(manctrl.componenti.selectedOption)">
+                      </select>
+            </div>
+            <div class="ui-filter" ng-if="manctrl.display3()">
+                <label id="ui-stampo--label">Seleziona Stampo</label>
+                <select ng-model="manctrl.stampi.selectedOption" ng-options="option for option in manctrl.stampi.availableOptions" ng-change="manctrl.changedValueStampo(manctrl.stampi.selectedOption)">
+                        </select>
+            </div>
+            <div class="ui-filter">
+                <label id="ui-controlli--label">Mostra solo stampi controllati almeno (giorni):</label>
+                <rzslider class="custom-slider" rz-slider-model="manctrl.slider.value" rz-slider-options="manctrl.slider.options">
+                </rzslider>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="manualTabGraphController as mangctrl">
+        <canvas class="chart chart-line" chart-data="mangctrl.tdata" chart-series="mangctrl.series" chart-click="onClick" chart-colors="mangctrl.colors" chart-options="mangctrl.options"></canvas>
+    </div>
+</div>
