@@ -110,8 +110,17 @@ function manualTabController($rootScope, $log, $scope, sidebarService, manserv, 
     });
 
     $scope.$on("updateSelections", function (event, data) {
-        //last thing to work on!
-        $log.info(data);
+        //$log.info(data);
+        vm.stampi.selectedOption = {};
+        vm.componenti.selectedOption = {};
+        vm.quote.selectedOption = {};
+
+        //update the selectedOption in those select menus
+        vm.quote.selectedOption = data.Quota;
+        vm.componenti.availableOptions = [data.Componente];
+        vm.componenti.selectedOption = data.Componente;
+        vm.stampi.availableOptions = [data.Stampo];
+        vm.stampi.selectedOption = data.Stampo;
         manserv.setQuota(data.Quota);
         manserv.setComp(data.Componente);
         manserv.setStampo(data.Stampo);

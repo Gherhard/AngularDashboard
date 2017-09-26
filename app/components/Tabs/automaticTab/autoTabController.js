@@ -88,18 +88,15 @@ function autoTabController($rootScope, $scope, $log, sidebarService, autoTabServ
         vm.data = dataserv.getData();
         vm.tdata = [];
         vm.tdata.push(vm.data[0].values);
-
     });
 
     $scope.onClick = function (points, evt) {
         var clickedElementindex = points[0]._index;
         var datiman = vm.tdata[0][clickedElementindex];
-        manualTabGraphService.sendManualMessage(sidebarService.getAgg(), sidebarService.getPerc(), datiman.Quota, datiman.Componente, datiman.Stampo, 1);
-        $rootScope.$broadcast("updateSelections", datiman);
         var r = confirm("You will see the selected point in manual selection,is that ok?");
         if (r == true) {
-            //change tab
-            //$scope.('.nav-tabs > .active').next('li').find('a').trigger('click');
+            manualTabGraphService.sendManualMessage(sidebarService.getAgg(), sidebarService.getPerc(), datiman.Quota, datiman.Componente, datiman.Stampo, 1);
+            $rootScope.$broadcast("updateSelections", datiman);
         }
 
     };
